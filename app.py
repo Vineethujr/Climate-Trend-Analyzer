@@ -17,6 +17,7 @@ if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
 # Import and execute the main Home page module
+# pyrefly: ignore[missing-import]
 from app.Home import main
 
 if __name__ == "__main__":

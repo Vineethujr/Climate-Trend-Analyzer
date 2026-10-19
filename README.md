@@ -11,6 +11,7 @@ A reproducible, professional, student-friendly data analytics application that i
 
 ## 📌 Table of Contents
 * [Overview](#-overview)
+* [Application Screenshots](#-application-screenshots)
 * [Key Features](#-key-features)
 * [Dataset Provenance & Attributes](#-dataset-provenance--attributes)
 * [Project Architecture](#-project-architecture)
@@ -32,6 +33,23 @@ The **Climate Trend Analyzer** ingests real-world historical surface temperature
 3. **Seasonal cycle decomposition** and intra-annual comparisons across climatological eras.
 4. Transparent **statistical anomaly detection** (Z-score thresholds, Tukey's IQR fences, and unsupervised Isolation Forests) with strict non-alarmist scientific disclaimers.
 5. Interactive, publication-ready **Plotly visualizations** and filtered data exports.
+
+---
+
+## 📸 Application Screenshots
+
+<div align="center">
+<table>
+  <tr>
+    <td><img src="Screenshots/01_Home.png" alt="Home dashboard" width="420" /></td>
+    <td><img src="Screenshots/02_Overview.png" alt="Climate overview dashboard" width="420" /></td>
+  </tr>
+  <tr>
+    <td><img src="Screenshots/03_Trend.png" alt="Trend analysis dashboard" width="420" /></td>
+    <td><img src="Screenshots/04_Seasonal_Patterns.png" alt="Seasonal patterns dashboard" width="420" /></td>
+  </tr>
+</table>
+</div>
 
 ---
 
