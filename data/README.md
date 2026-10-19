@@ -2,9 +2,7 @@
 
 This directory houses historical climate observation datasets utilized by the **Climate Trend Analyzer**.
 
-## Directory Layout
-* `raw/`: Unmodified primary historical climate observation series directly ingested from public authoritative meteorological agencies (NOAA NCEI and NASA GISS).
-* `processed/`: Validated, cleaned, and standardized anomaly series with temporal indices, computed rolling averages, and uniform column conventions.
+* `raw/`: Unmodified primary historical climate observation series directly ingested from NOAA NCEI (1850–Present). Real observations are processed dynamically in-memory.
 
 ## Primary Datasets
 

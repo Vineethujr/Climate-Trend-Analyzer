@@ -67,39 +67,26 @@ The **Climate Trend Analyzer** ingests real-world historical surface temperature
 climate-trend-analyzer/
 ├── .github/
 │   └── workflows/
-│       └── tests.yml             # GitHub Actions CI workflow
+│       └── tests.yml             # GitHub Actions automated CI testing workflow
 ├── .streamlit/
 │   └── config.toml               # Streamlit theme & layout configuration
 ├── app/
 │   ├── Home.py                   # Main Streamlit dashboard application
 │   └── pages/
-│       ├── 1_🌡️_Climate_Overview.py
-│       ├── 2_📈_Trend_Analysis.py
-│       ├── 3_🍂_Seasonal_Patterns.py
-│       ├── 4_🚨_Anomaly_Detection.py
-│       ├── 5_🔮_Predictive_Model.py
-│       └── 6_📖_Methodology.py
+│       ├── 1_Climate_Overview.py
+│       ├── 2_Trend_Analysis.py
+│       ├── 3_Seasonal_Patterns.py
+│       ├── 4_Anomaly_Detection.py
+│       ├── 5_Predictive_Model.py
+│       └── 6_Methodology_and_Data.py
 ├── data/
-│   ├── raw/                      # Real public NOAA NCEI CSV datasets
-│   ├── processed/                # Normalized series and baseline-adjusted tables
+│   ├── raw/                      # Real public NOAA NCEI CSV datasets (1850-Present)
 │   └── README.md                 # Data provenance, data dictionary, licensing
 ├── docs/
-│   ├── dataset_documentation.md  # Extended documentation on sources & variables
+│   ├── dataset_documentation.md  # Detailed documentation on sources & variables
 │   └── methodology.md            # Mathematical formulations & statistical proofs
-├── images/
-│   ├── screenshots/              # UI application snapshots
-│   └── README.md
-├── models/
-│   ├── baseline_model.joblib     # Serialized educational baseline models
-│   └── README.md
 ├── notebooks/
 │   ├── 01_exploratory_data_analysis.ipynb
-│   └── README.md
-├── outputs/
-│   ├── figures/                  # Vector and raster chart exports
-│   └── README.md
-├── reports/
-│   ├── anomaly_summary_report.csv
 │   └── README.md
 ├── src/                          # Core analytical Python package
 │   ├── __init__.py
@@ -122,7 +109,8 @@ climate-trend-analyzer/
 │   ├── test_trend_analysis.py
 │   ├── test_seasonal_analysis.py
 │   ├── test_anomaly_detection.py
-│   └── test_predictive_model.py
+│   ├── test_predictive_model.py
+│   └── test_visualizations.py
 ├── .gitignore
 ├── app.py                        # Root launcher for Streamlit Cloud
 ├── LICENSE                       # MIT License
