@@ -11,6 +11,7 @@ import pandas as pd
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
+PAGES_DIR = os.path.join(BASE_DIR, "app", "pages")
 
 from src.data_loader import load_dataset, get_available_domains
 from src.preprocessing import compute_rolling_averages, adjust_baseline
@@ -196,22 +197,22 @@ def main():
     with nav1:
         st.markdown("#### 1. 🌡️ Climate Overview")
         st.write("Examine the full dataset distribution, annual summaries, and interactive date window filters.")
-        st.page_link("pages/1_Climate_Overview.py", label="Explore Overview", icon="🌡️")
+        st.page_link(os.path.join(PAGES_DIR, "1_Climate_Overview.py"), label="Explore Overview", icon="🌡️")
 
     with nav2:
         st.markdown("#### 2. 📈 Trend Analysis")
         st.write("Quantify long-term warming rates (°C/decade) via OLS and Theil-Sen regression with 95% CIs.")
-        st.page_link("pages/2_Trend_Analysis.py", label="Analyze Trends", icon="📈")
+        st.page_link(os.path.join(PAGES_DIR, "2_Trend_Analysis.py"), label="Analyze Trends", icon="📈")
 
     with nav3:
         st.markdown("#### 3. 🍂 Seasonal Patterns")
         st.write("Deconstruct monthly climatology, intra-annual shifts, and classical 4-component decomposition.")
-        st.page_link("pages/3_Seasonal_Patterns.py", label="Inspect Seasonality", icon="🍂")
+        st.page_link(os.path.join(PAGES_DIR, "3_Seasonal_Patterns.py"), label="Inspect Seasonality", icon="🍂")
 
     with nav4:
         st.markdown("#### 4. 🚨 Anomaly Detection")
         st.write("Detect statistical outliers via Z-score, Tukey IQR fences, and unsupervised Isolation Forest.")
-        st.page_link("pages/4_Anomaly_Detection.py", label="Detect Anomalies", icon="🚨")
+        st.page_link(os.path.join(PAGES_DIR, "4_Anomaly_Detection.py"), label="Detect Anomalies", icon="🚨")
 
     st.markdown("---")
     st.markdown(

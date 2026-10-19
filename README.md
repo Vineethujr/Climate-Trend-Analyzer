@@ -1,7 +1,7 @@
 # 🌍 Climate Trend Analyzer
 
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11-blue.svg)](https://www.python.org/)
-[![Framework](https://img.shields.io/badge/Streamlit-1.30+-red.svg)](https://streamlit.io/)
+[![Framework](https://img.shields.io/badge/Streamlit-1.36+-red.svg)](https://streamlit.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)](tests/)
 

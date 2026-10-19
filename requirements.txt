@@ -1,5 +1,5 @@
 # Core Web & Visualization
-streamlit>=1.30.0
+streamlit>=1.36.0
 plotly>=5.18.0
 matplotlib>=3.7.0
 
