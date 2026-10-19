@@ -17,6 +17,14 @@ import os
 import subprocess
 import argparse
 
+# Ensure safe console printing on Windows cmd/powershell
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 def get_base_dir() -> str:
     """Return the absolute path of the project root directory."""
     return os.path.dirname(os.path.abspath(__file__))
@@ -29,8 +37,8 @@ def run_streamlit_app():
         app_path = os.path.join(base_dir, "app.py")
     
     print("\n" + "="*60)
-    print("🌍 Starting Climate Trend Analyzer Streamlit Application...")
-    print(f"📍 Entrypoint: {app_path}")
+    print("[*] Starting Climate Trend Analyzer Streamlit Application...")
+    print(f"[*] Entrypoint: {app_path}")
     print("="*60 + "\n")
     
     cmd = [sys.executable, "-m", "streamlit", "run", app_path]
@@ -39,7 +47,7 @@ def run_streamlit_app():
 def run_tests():
     """Execute the pytest automated test suite."""
     print("\n" + "="*60)
-    print("🧪 Running Climate Trend Analyzer Test Suite...")
+    print("[*] Running Climate Trend Analyzer Test Suite...")
     print("="*60 + "\n")
     cmd = [sys.executable, "-m", "pytest", "-v", "tests/"]
     sys.exit(subprocess.run(cmd).returncode)
@@ -48,7 +56,7 @@ def show_status():
     """Display environment, dataset, and package diagnostics."""
     base_dir = get_base_dir()
     print("\n" + "="*60)
-    print("📋 Climate Trend Analyzer - System Diagnostics")
+    print("[*] Climate Trend Analyzer - System Diagnostics")
     print("="*60)
     print(f"Python Runtime : {sys.version.split()[0]} ({sys.executable})")
     print(f"Project Root   : {base_dir}")
@@ -59,7 +67,7 @@ def show_status():
         print(f"Data directory : {data_dir} ({len(files)} files)")
         for f in files:
             size_kb = os.path.getsize(os.path.join(data_dir, f)) / 1024
-            print(f"  • {f} ({size_kb:.1f} KB)")
+            print(f"  * {f} ({size_kb:.1f} KB)")
     else:
         print(f"Data directory : {data_dir} (Not yet created)")
     
@@ -69,9 +77,9 @@ def show_status():
         try:
             mod = __import__(dep)
             ver = getattr(mod, "__version__", "installed")
-            print(f"  [✓] {dep:15s} : {ver}")
+            print(f"  [OK] {dep:15s} : {ver}")
         except ImportError:
-            print(f"  [✗] {dep:15s} : NOT FOUND")
+            print(f"  [X]  {dep:15s} : NOT FOUND")
     print("="*60 + "\n")
 
 def main():
